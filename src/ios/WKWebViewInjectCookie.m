@@ -44,6 +44,12 @@
         [cookieProperties setObject:path forKey:NSHTTPCookiePath];
         [cookieProperties setObject:secure forKey:NSHTTPCookieSecure];
         [cookieProperties setObject:maxAge forKey:NSHTTPCookieMaximumAge];
+        
+        // Set SameSite attribute (Optional)
+        cookieProperties[.sameSite] = "None" // or "Strict" or "None" (if "None", also set .secure)
+
+        // Set Secure attribute for "None"
+        cookieProperties[.secure] = true
 
         @try {
             if (![expire isEqual: [NSNull null]]) {

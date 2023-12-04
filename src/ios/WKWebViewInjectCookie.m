@@ -48,7 +48,7 @@
         // Set SameSite attribute (Optional)
         [cookieProperties setObject:@"None" forKey:@"sameSite"];
         // Set Secure attribute for "None"
-        [cookieProperties setObject:"true" forKey:@"secure"];
+        [cookieProperties setObject:@"true" forKey:@"secure"];
 
         @try {
             if (![expire isEqual: [NSNull null]]) {
